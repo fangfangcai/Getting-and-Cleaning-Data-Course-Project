@@ -42,6 +42,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 6. Obtain the average of each variable for each activity and each subject using "melt" and "dcast".
 
 -30 Subjects labeled 1 to 30.
+
 -Activities includes: laying, sitting, standing, walking upstairs, walking downstairs and walking.
 
 ##Refer to run_analysis.R for the R code.
