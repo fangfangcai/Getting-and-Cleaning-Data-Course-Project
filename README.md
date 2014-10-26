@@ -16,5 +16,5 @@ Location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20H
 Download the dataset into the working directory and unzip it.
 Packages might require: plyr, reshape2, data.table
 
-#Details of the data is in CodeBook.md.
-#R Code required is in run_analysis.R.
+###Details of the data is in CodeBook.md.
+###R Code required is in run_analysis.R.
