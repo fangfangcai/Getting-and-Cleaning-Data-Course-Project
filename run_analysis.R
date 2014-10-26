@@ -43,4 +43,4 @@ TestAndTraining <- melt(TestAndTraining, id = IDs, measure.vars = measures)
 Data <- dcast(TestAndTraining, Subject + Activity ~ variable, mean)
 
 ##Output
-write.table(Data, file = "./Data.txt")
+write.table(Data, file = "./Data.txt", row.name=FALSE)
