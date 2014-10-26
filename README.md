@@ -14,6 +14,7 @@ Location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20H
 
 ##Requirements
 Download the dataset into the working directory and unzip it.
+
 Packages might require: plyr, reshape2, data.table
 
 ###Details of the data is in CodeBook.md.
