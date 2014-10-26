@@ -2,6 +2,7 @@
 This repository contains the files to be submitted for Getting-and-Cleaning-Data-Course-Project. The goal of this course project is to prepare tidy data that can be used for later analysis.
 
 Dataset: Human Activity Recognition Using Smartphones Dataset
+
 Location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ##Project Details:
@@ -15,5 +16,5 @@ Location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20H
 Download the dataset into the working directory and unzip it.
 Packages might require: plyr, reshape2, data.table
 
-##Details of the data is in CodeBook.md.
-##R Code required is in run_analysis.R.
+#Details of the data is in CodeBook.md.
+#R Code required is in run_analysis.R.
