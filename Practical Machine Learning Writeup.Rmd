@@ -1,0 +1,52 @@
+---
+title: "Practical Machine Learning - Course Project Writeup"
+author: "Fangfang"
+date: "Sunday, March 22, 2015"
+output: html_document
+---
+
+#Cleaning the data
+
+Reading the Training set and the Test set:
+```{r}
+training <- read.csv("pml-training.csv", header=T, na.strings=c("NA", "#DIV/0!"))
+testing <- read.csv("pml-testing.csv", header=T, na.strings=c("NA", "#DIV/0!"))
+```
+
+Removing the NAs:
+```{r}
+TrainingWithoutNA<-training[, apply(training, 2, function(x) !any(is.na(x)))]
+TrainingFinal<-TrainingWithoutNA[,-c(1:8)]
+TestFinal<-testing[,names(TrainingFinal[,-52])]
+```
+
+Creating a training set (60%) and a test set (40%) from the training set:
+```{r}
+library(caret)
+inTraining<-createDataPartition(y=TrainingFinal$classe, p=0.6,list=F)
+Trainingset<-TrainingFinal[inTraining,] 
+testset<-TrainingFinal[-inTraining,] 
+```
+
+```{r}
+library(caret)
+set.seed(100)
+Control<-trainControl(method="cv", number=5, allowParallel=T, verbose=T)
+rffit<-train(classe~.,data=Trainingset, method="rf", trControl=Control, verbose=F)
+```
+
+We expect a low out of sample error:
+```{r}
+print(rffit$finalModel)
+```
+
+Cross Validation to estimate the error:
+```{r}
+prediction<-predict(rffit, newdata=testset)
+confusionMatrix(prediction, testset$classe)
+```
+
+Predictions:
+```{r}
+predict(rffit, newdata=TestFinal)
+```
